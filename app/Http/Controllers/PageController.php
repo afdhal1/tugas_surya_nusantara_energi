@@ -47,6 +47,11 @@ class PageController extends Controller
         return view('pages.layanan', ['layanan' => $this->daftarLayanan()]);
     }
 
+    public function edukasi()
+    {
+        return view('pages.edukasi');
+    }
+
     public function detail(string $slug)
     {
         $layanan = $this->daftarLayanan();

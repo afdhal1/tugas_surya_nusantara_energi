@@ -5,77 +5,48 @@
 @section('content')
     <section class="hero">
         <div class="hero-content">
-            <div>
-                <div class="eyebrow">Solusi energi masa depan</div>
-                <h1>Hidupkan masa depan dengan energi surya yang cerdas.</h1>
-                <p>Surya Nusantara Energi membantu rumah, bisnis, dan industri beralih ke energi bersih yang hemat, andal, dan siap menghadapi kebutuhan hari ini dan esok.</p>
+            <div class="hero-copy">
+                <div class="eyebrow"><span></span> Energi surya untuk Indonesia</div>
+                <h1>Energi yang lebih baik, <em>dimulai dari atap Anda.</em></h1>
+                <p>Kami merancang dan memasang sistem tenaga surya yang sesuai dengan kebutuhan rumah, bisnis, dan industri Anda.</p>
 
                 <div class="hero-actions">
-                    <a href="{{ route('kontak') }}" class="btn btn-primary">Konsultasi Gratis</a>
-                    <a href="{{ route('layanan') }}" class="btn btn-secondary">Lihat Layanan</a>
+                    <a href="{{ route('kontak') }}" class="btn btn-primary">Diskusikan kebutuhan <span aria-hidden="true">↗</span></a>
+                    <a href="{{ route('layanan') }}" class="btn btn-secondary">Jelajahi layanan</a>
                 </div>
 
-                <div class="hero-metrics">
-                    <div class="metric">
-                        <strong>1.5k+</strong>
-                        <span>Instalasi</span>
-                    </div>
-                    <div class="metric">
-                        <strong>28%</strong>
-                        <span>Hemat biaya</span>
-                    </div>
-                    <div class="metric">
-                        <strong>24/7</strong>
-                        <span>Dukungan</span>
-                    </div>
+                <div class="hero-note">
+                    <span class="hero-note-line"></span>
+                    Dari konsultasi awal hingga sistem siap digunakan.
                 </div>
             </div>
 
             <div class="hero-visual">
-                <div class="hero-card">
-                    <div class="hero-card-header">
-                        <h3>Produksi harian</h3>
-                        <span class="status-pill">Aktif</span>
-                    </div>
-
-                    <div class="energy-panel">
-                        <div class="energy-row">
-                            <strong>72%</strong>
-                            <span>Capacitas</span>
-                        </div>
-                        <div class="energy-bar"><span></span></div>
-                    </div>
-
-                    <div class="hero-mini-grid">
-                        <div class="mini-stat">
-                            <strong>8.4 MWh</strong>
-                            <span>Output bulan ini</span>
-                        </div>
-                        <div class="mini-stat">
-                            <strong>4.8k</strong>
-                            <span>Kg CO₂ terhemat</span>
-                        </div>
-                    </div>
+                <img
+                    src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=85"
+                    alt="Panel surya terpasang di atap, menangkap cahaya matahari"
+                    fetchpriority="high"
+                >
+                <div class="visual-caption">
+                    <span class="caption-mark" aria-hidden="true">NCE</span>
+                    <span><strong>Dirancang untuk kebutuhan Anda</strong><small>Rumah · Bisnis · Industri</small></span>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="info-grid">
-        <div class="info-card accent">
-            <div class="info-icon">⚡</div>
-            <h3>Efisiensi tertinggi</h3>
-            <p>Sistem dirancang agar menghasilkan energi maksimal sepanjang hari dengan pemantauan real time.</p>
+        <div class="info-card">
+            <span class="info-index">01</span>
+            <div><h3>Dimulai dari kebutuhan</h3><p>Solusi disesuaikan dengan pola pemakaian dan kondisi lokasi Anda.</p></div>
         </div>
         <div class="info-card">
-            <div class="info-icon">🛡️</div>
-            <h3>Garansi terjamin</h3>
-            <p>Panel, inverter, dan instalasi didukung garansi panjang agar investasi Anda aman dan tenang.</p>
+            <span class="info-index">02</span>
+            <div><h3>Perhitungan yang jelas</h3><p>Ruang lingkup dan estimasi dibicarakan sebelum pekerjaan dimulai.</p></div>
         </div>
         <div class="info-card">
-            <div class="info-icon">📈</div>
-            <h3>ROI jelas</h3>
-            <p>Analisis kebutuhan dan estimasi pengembalian modal dibuat transparan sejak awal proyek.</p>
+            <span class="info-index">03</span>
+            <div><h3>Dukungan berkelanjutan</h3><p>Kami tetap mendampingi setelah sistem terpasang dan digunakan.</p></div>
         </div>
     </section>
 
@@ -89,13 +60,98 @@
     <div class="grid">
         @foreach ($layanan as $slug => $item)
             <article class="card">
-                <div class="card-icon">☀️</div>
+                <span class="card-index">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                 <h3>{{ $item['nama'] }}</h3>
                 <p>{{ $item['ringkasan'] }}</p>
-                <a href="{{ route('layanan.detail', $slug) }}" class="card-link">Lihat detail <span>→</span></a>
+                <a href="{{ route('layanan.detail', $slug) }}" class="card-link">Lihat detail <span aria-hidden="true">↗</span></a>
             </article>
         @endforeach
     </div>
+
+    <section class="products-section" aria-labelledby="product-examples-title">
+        <div class="section-head">
+            <div>
+                <div class="section-tag">Pilihan produk</div>
+                <h2 id="product-examples-title">Komponen yang bekerja bersama</h2>
+            </div>
+            <p class="products-intro">Contoh produk untuk membangun sistem energi yang sesuai dengan kebutuhan Anda.</p>
+        </div>
+
+        <div class="products-grid">
+            <article class="product-card">
+                <div class="product-art product-art-panel" aria-hidden="true">
+                    <span class="product-art-label">01 / GENERATE</span>
+                    <svg viewBox="0 0 180 140" fill="none">
+                        <path d="m35 83 15-47h82l15 47H35Z" fill="currentColor" fill-opacity=".13" stroke="currentColor" stroke-width="2"/>
+                        <path d="M57 36 45 83m27-47L63 83m29-47v47m28-47 12 47M43 59h98M39 72h106" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="m79 83-8 24m30-24 8 24M65 108h57" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="137" cy="36" r="11" fill="#efc47d"/>
+                    </svg>
+                </div>
+                <div class="product-card-copy">
+                    <span class="product-type">Modul fotovoltaik</span>
+                    <h3>Panel Surya</h3>
+                    <p>Menangkap cahaya matahari untuk menghasilkan listrik bagi rumah maupun bangunan usaha.</p>
+                    <a href="{{ route('kontak') }}" class="card-link">Tanyakan produk <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-art product-art-inverter" aria-hidden="true">
+                    <span class="product-art-label">02 / CONVERT</span>
+                    <svg viewBox="0 0 180 140" fill="none">
+                        <rect x="57" y="20" width="66" height="100" rx="8" fill="currentColor" fill-opacity=".11" stroke="currentColor" stroke-width="2"/>
+                        <rect x="68" y="32" width="44" height="24" rx="3" fill="#f7f6f0" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M75 44h8m6 0h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="m94 67-12 18h10l-5 17 17-23H94l7-12Z" fill="#d87845"/>
+                        <circle cx="90" cy="110" r="2" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="product-card-copy">
+                    <span class="product-type">Pengubah daya</span>
+                    <h3>Inverter</h3>
+                    <p>Mengubah listrik dari panel agar dapat digunakan oleh peralatan listrik di bangunan Anda.</p>
+                    <a href="{{ route('kontak') }}" class="card-link">Tanyakan produk <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-art product-art-battery" aria-hidden="true">
+                    <span class="product-art-label">03 / STORE</span>
+                    <svg viewBox="0 0 180 140" fill="none">
+                        <rect x="47" y="40" width="86" height="65" rx="8" fill="currentColor" fill-opacity=".11" stroke="currentColor" stroke-width="2"/>
+                        <path d="M133 60h8v25h-8" stroke="currentColor" stroke-width="2"/>
+                        <rect x="59" y="52" width="62" height="41" rx="4" fill="#f7f6f0" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M90 58 77 77h11l-4 12 18-22H91l6-9Z" fill="#d87845"/>
+                        <path d="M58 115h64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="product-card-copy">
+                    <span class="product-type">Penyimpanan energi</span>
+                    <h3>Baterai</h3>
+                    <p>Menyimpan energi untuk sistem hybrid dan membantu menyediakan cadangan daya sesuai desain sistem.</p>
+                    <a href="{{ route('kontak') }}" class="card-link">Tanyakan produk <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-art product-art-light" aria-hidden="true">
+                    <span class="product-art-label">04 / ILLUMINATE</span>
+                    <svg viewBox="0 0 180 140" fill="none">
+                        <path d="M84 27v91m0-73h43c7 0 12 5 12 12v4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M128 58h24l-5 13h-24l5-13Z" fill="#efc47d" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="m128 46 5-9m8 9 2-10m9 11 7-7M72 118h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="m49 53 17-12 15 12" fill="#fffefa" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="m54 51-3 10h28l-3-10" fill="currentColor" fill-opacity=".15" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <div class="product-card-copy">
+                    <span class="product-type">Penerangan luar ruang</span>
+                    <h3>Lampu Jalan Surya</h3>
+                    <p>Penerangan mandiri bertenaga surya untuk jalan, area parkir, dan fasilitas umum.</p>
+                    <a href="{{ route('kontak') }}" class="card-link">Tanyakan produk <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+        </div>
+        <p class="product-note">Contoh kategori produk. Spesifikasi dan ketersediaan dikonfirmasi saat konsultasi.</p>
+    </section>
 
     <section class="process-section">
         <div class="section-head">
@@ -121,39 +177,6 @@
                 <h3>Instalasi & monitoring</h3>
                 <p>Proses pemasangan dilakukan profesional lalu dilanjutkan pemantauan performa secara berkala.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="testimonial-section">
-        <div class="section-head">
-            <div>
-                <div class="section-tag">Testimoni</div>
-                <h2>Yang pelanggan bilang</h2>
-            </div>
-        </div>
-
-        <div class="testimonial-grid">
-            <article class="testimonial-card">
-                <p>"Prosesnya cepat, hasilnya sesuai target. Tagihan listrik kami turun signifikan hanya dalam beberapa bulan."</p>
-                <div class="person">
-                    <strong>Rina W.</strong>
-                    <span>Rumah Tangga</span>
-                </div>
-            </article>
-            <article class="testimonial-card">
-                <p>"Timnya sangat profesional. Sistem PLTS kami berjalan stabil dan dukungan purna jual juga responsif."</p>
-                <div class="person">
-                    <strong>Andi S.</strong>
-                    <span>UMKM</span>
-                </div>
-            </article>
-            <article class="testimonial-card">
-                <p>"Kami memilih solusi industri karena analisis ROI-nya detail dan realisasi proyek sesuai jadwal."</p>
-                <div class="person">
-                    <strong>PT. Nusantara Maju</strong>
-                    <span>Industri</span>
-                </div>
-            </article>
         </div>
     </section>
 

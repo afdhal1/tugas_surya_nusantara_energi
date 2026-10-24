@@ -3,13 +3,16 @@
 @section('title', 'Tentang Kami')
 
 @section('content')
-    <h1>Tentang Surya Nusantara Energi</h1>
-    <p>Didirikan dengan misi mempercepat transisi energi bersih di Nusantara, kami telah memasang ribuan kilowatt-peak kapasitas surya untuk rumah tangga, UMKM, hingga industri.</p>
+    <header class="page-intro">
+        <span class="section-tag">Tentang kami</span>
+        <h1>Energi bersih, dengan pendekatan yang dekat.</h1>
+        <p>Nusantara Clean Energy hadir untuk membantu rumah tangga, UMKM, dan industri memahami serta beralih ke energi surya dengan langkah yang jelas.</p>
+    </header>
 
     <div class="grid">
         <article class="card">
             <h3>Visi</h3>
-            <p>Menjadi penyedia solusi energi surya terpercaya di Asia Tenggara.</p>
+            <p>Menjadi mitra energi surya yang dipercaya untuk kebutuhan di seluruh Nusantara.</p>
         </article>
         <article class="card">
             <h3>Misi</h3>

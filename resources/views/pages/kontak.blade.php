@@ -3,21 +3,24 @@
 @section('title', 'Kontak')
 
 @section('content')
-    <h1>Hubungi Kami</h1>
-    <p>Tim kami siap membantu menghitung kebutuhan energi surya Anda.</p>
+    <header class="page-intro">
+        <span class="section-tag">Mari berbincang</span>
+        <h1>Mulai dari percakapan.</h1>
+        <p>Tim kami siap membantu Anda memahami kebutuhan energi surya. Hubungi kami melalui salah satu kanal berikut.</p>
+    </header>
 
     <div class="grid">
-        <article class="card">
+        <article class="card contact-card">
             <h3>Alamat</h3>
             <p>Jl. Energi Bersih No. 1, Jakarta Selatan</p>
         </article>
-        <article class="card">
+        <article class="card contact-card">
             <h3>Telepon</h3>
-            <p>(021) 555-0123</p>
+            <p><a href="tel:+62215550123">(021) 555-0123</a></p>
         </article>
-        <article class="card">
+        <article class="card contact-card">
             <h3>Email</h3>
-            <p>halo@suryanusantara.example</p>
+            <p><a href="mailto:halo@suryanusantara.example">halo@suryanusantara.example</a></p>
         </article>
     </div>
 @endsection

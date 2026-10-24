@@ -5,6 +5,7 @@
 @section('content')
     <div class="page-header">
         <div class="crumb"><a href="{{ route('layanan') }}">← Kembali ke Layanan</a></div>
+        <span class="detail-label">Solusi energi surya</span>
         <h1>{{ $item['nama'] }}</h1>
         <p>{{ $item['deskripsi'] }}</p>
     </div>
@@ -23,7 +24,7 @@
             @endforeach
         </ul>
 
-        <div style="margin-top: 1.5rem;">
+        <div class="detail-action">
             <a href="{{ route('kontak') }}" class="btn btn-primary">Minta Penawaran</a>
         </div>
     </div>
